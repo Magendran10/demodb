@@ -1,25 +1,14 @@
-express = require("express");
+import express from "express" 
+import movieRoutes from "./routes/movies.js"
+
 const app= express();
 const PORT=3000;
 app.get('/',(req,res) =>{
-    res.json({"msg":"HELLO I AM MAGE"
+    res.json({"msg":"HELLO I AM MAGE!!"
     });
 });
-app.get('/movies',() =>{
 
-})
-
-app.post('/movies',() =>{
-
-})
-
-app.put('/movies/:id',() => {
-
-})
-
-app.delete('/movies/:id',() => {
-
-})
+app.use('/movies', movieRoutes)
 
 app.listen(PORT,() =>{
     console.log(`The server is running at http://localhost:${PORT}`);
