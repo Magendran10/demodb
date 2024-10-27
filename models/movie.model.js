@@ -1,8 +1,13 @@
 import mongoose,{ Schema,model } from "mongoose";
 
 const schema = new Schema({
-    title: String,
-    Hero: String,
+    title: {
+        type:String,
+        required:true,
+        unique:true},
+    Hero: {
+        type:String,
+        required:true,}
 });
 
 const Movie = model("Movie",schema);

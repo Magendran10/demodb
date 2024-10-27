@@ -4,11 +4,14 @@ import {
     MovieCreate,
     MovieDelete,
     MovieUpadte,
+    MovieDetail
 } from "../Controllers/movies.controller.js";
 
 const router = express.Router(); 
 
 router.get('/',MovieIndex);
+
+router.get('/:id',MovieDetail);
 
 router.post('/',MovieCreate);
 
